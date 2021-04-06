@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ThirdPartyLib {
     static final String FILE_NAME = "C:\\Users\\HP\\IdeaProjects\\ThirdPartyLib\\src\\main\\resources\\user.csv";
-    public static void main(String[] args) throws IOException {
+    public static void CsvParse() throws IOException {
         Reader bufferedReader = Files.newBufferedReader(Paths.get(FILE_NAME));
         CsvToBean<User> csvToBean = new CsvToBeanBuilder(bufferedReader).withType(User.class).withIgnoreLeadingWhiteSpace(true).build();
         List<User> iterator = csvToBean.parse();
@@ -18,5 +18,6 @@ public class ThirdPartyLib {
             User user = iterator.next();
             System.out.println(user);
         }*/
+
     }
 }
